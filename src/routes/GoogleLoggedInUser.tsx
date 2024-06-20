@@ -24,7 +24,7 @@ export function GoogleLoggedInUser() {
 
   // main part
 
-  const currentUser = auth.currentUser;
+  //const currentUser = auth.currentUser;
 
   console.log(auth.currentUser);
 

@@ -18,7 +18,7 @@ import {
   isGoogleAuthAction,
   isTelegramTokenExpired,
 } from "../utils/localStorageUtils";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, /*useRef,*/ useState } from "react";
 import { useErrorContext, useGoogleAuthContext } from "../contexts/useContext";
 import {
   LinkToVideoFromCameraPage,

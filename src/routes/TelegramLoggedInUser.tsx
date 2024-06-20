@@ -1,28 +1,28 @@
-import {
-  useErrorContext,
-  useTelegramAuthContext,
-} from "../contexts/useContext";
+//import {
+//  useErrorContext,
+//  useTelegramAuthContext,
+//} from "../contexts/useContext";
 import { LogOutFromTelegramButton } from "../components/Components";
-import { useNavigate } from "react-router-dom";
-import { ERROR_ROUTE } from "../static/routes";
+//import { useNavigate } from "react-router-dom";
+//import { ERROR_ROUTE } from "../static/routes";
 import {
   LinkToVideoFromCameraPage,
   LinkToPhotosPage,
   LinkToSubscriptionPage,
 } from "../components/Links";
-import { TonConnectPage } from "./tonConnect/TonConnectPage";
+//import { TonConnectPage } from "./tonConnect/TonConnectPage";
 
 export function TelegramLoggedInUser() {
-  const telegramAuthContext = useTelegramAuthContext();
-  const userInfo = telegramAuthContext.authResponse?.authData?.user;
+//  const telegramAuthContext = useTelegramAuthContext();
+//  const userInfo = telegramAuthContext.authResponse?.authData?.user;
 
-  const errorContext = useErrorContext();
-  const navigate = useNavigate();
+//  const errorContext = useErrorContext();
+//  const navigate = useNavigate();
 
-  const handleError = (error: { message: string }) => {
-    errorContext.setError(error.message);
-    navigate(ERROR_ROUTE, { replace: true });
-  };
+//  const handleError = (error: { message: string }) => {
+//    errorContext.setError(error.message);
+//    navigate(ERROR_ROUTE, { replace: true });
+//  };
 
   //if (!userInfo) {
   //  telegramAuthContext.doLogOutFromTelegram();

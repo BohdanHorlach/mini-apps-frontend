@@ -25,10 +25,10 @@ import { Photos } from "./routes/Photos.tsx";
 import { AuthPage } from "./routes/AuthPage.tsx";
 import { TonConnectPage } from "./routes/tonConnect/TonConnectPage.tsx";
 import { SubscriptionAdminPage } from "./routes/SubscriptionAdminPage.tsx";
-import {
-  AdminProtection,
-  LoginProtection,
-} from "./components/ProtectionComponents.tsx";
+//import {
+//  AdminProtection,
+//  LoginProtection,
+//} from "./components/ProtectionComponents.tsx";
 
 // Create router
 const router = createBrowserRouter([
