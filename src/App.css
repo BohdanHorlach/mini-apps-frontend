@@ -1,0 +1,15 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/*---------------------------------------------------------------------------------*/
+
+.column {
+  display: grid;
+  grid-template-columns: 1fr; /* Adjust as needed */
+  gap: 30px; /* Specify the gap between items */
+  justify-items: center;
+}
