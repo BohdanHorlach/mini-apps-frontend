@@ -115,7 +115,7 @@ export const TonConnectPage = () => {
 
     function backButtonClick() {
       const page = getLastPage();
-      navigate(page === null ? "" : page, {replace: true});
+      navigate(page === null ? "/" : page, {replace: true});
     }
 
     if (webApp !== null) {
