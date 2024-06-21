@@ -10,6 +10,8 @@ import {
   LinkToPhotosPage,
   LinkToSubscriptionPage,
 } from "../components/Links";
+import { TELEGRAM_USER_ROUTE } from "../static/routes";
+import { webApp } from "../telegram/webApp";
 //import { TonConnectPage } from "./tonConnect/TonConnectPage";
 
 export function TelegramLoggedInUser() {
@@ -24,6 +26,8 @@ export function TelegramLoggedInUser() {
 //    navigate(ERROR_ROUTE, { replace: true });
 //  };
 
+  webApp?.BackButton.hide();
+
   //if (!userInfo) {
   //  telegramAuthContext.doLogOutFromTelegram();
   //  handleError({ message: `${JSON.stringify(userInfo)}` });
@@ -34,7 +38,7 @@ export function TelegramLoggedInUser() {
         <p>User authenticated</p>
         <hr />
         <div className="column">
-          <LinkToSubscriptionPage />
+          <LinkToSubscriptionPage lastPage={TELEGRAM_USER_ROUTE}/>
         </div>
         <hr />
         <h2>Telegram User Info:</h2>
@@ -60,8 +64,8 @@ export function TelegramLoggedInUser() {
           User Allows Write To PM: {/*userInfo.allows_write_to_pm ? "Yes" : "No"*/}
         </p>
         <div style={{width: "68vw"}}>
-          <LinkToVideoFromCameraPage />
-          <LinkToPhotosPage />
+          <LinkToVideoFromCameraPage lastPage={TELEGRAM_USER_ROUTE} />
+          <LinkToPhotosPage lastPage={TELEGRAM_USER_ROUTE} />
           <LogOutFromTelegramButton />
         </div>
       </div>

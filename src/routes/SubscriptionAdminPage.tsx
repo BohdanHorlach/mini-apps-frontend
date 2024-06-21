@@ -106,12 +106,12 @@ export const SubscriptionAdminPage = () => {
       BackButton.onClick(backButtonClick);
     }
 
-    //unscribe of onClick event
     return () => {
-      if (webApp !== null) {
-        webApp.MainButton.offClick(mainButtonClick);
-        webApp.BackButton.offClick(backButtonClick);
-      }
+      webApp?.MainButton.offClick(mainButtonClick);
+      webApp?.MainButton.hide();
+
+      webApp?.BackButton.offClick(backButtonClick);
+      webApp?.BackButton.hide();
     }
   }, [webApp]);
 

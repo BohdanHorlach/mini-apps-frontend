@@ -108,6 +108,7 @@ export const TonConnectPage = () => {
   }, []);
 
 
+  //Mini apps buttons setting
   useEffect(() => {
     function mainButtonClick() {
       buySubscription();
@@ -131,10 +132,8 @@ export const TonConnectPage = () => {
     }
 
     return () => {
-      if (webApp !== null) {
-        webApp.MainButton.offClick(mainButtonClick);
-        webApp.BackButton.offClick(backButtonClick);
-      }
+      webApp?.MainButton.offClick(mainButtonClick);
+      webApp?.BackButton.offClick(backButtonClick);
     }
   }, [webApp]);
 

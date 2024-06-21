@@ -11,6 +11,7 @@ import {
   ERROR_ROUTE,
   GOOGLE_USER_ROUTE,
   TELEGRAM_USER_ROUTE,
+  BASE_ROUTE
 } from "../static/routes";
 import { auth } from "../firebase/firebaseConfig";
 import {
@@ -94,8 +95,8 @@ export const Login = () => {
         <LogInWithGoogleButton />
         <LogOutFromGoogleButton />
         <hr />
-        <LinkToVideoFromCameraPage />
-        <LinkToPhotosPage />
+        <LinkToVideoFromCameraPage lastPage={BASE_ROUTE}/>
+        <LinkToPhotosPage lastPage={BASE_ROUTE} />
       </div>
     </div>
   );

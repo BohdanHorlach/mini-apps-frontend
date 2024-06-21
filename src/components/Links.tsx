@@ -10,15 +10,23 @@ import {
   GOOGLE_USER_ROUTE,
   ERROR_ROUTE,
 } from "../static/routes";
+import { addToHistoryPage } from "../utils/localStorageUtils";
+import React from "react";
+
+
+interface LastPageProps {
+  lastPage: string;
+}
 
 //--------------------------------- Link to subscription page ---------------------------------//
 
-export const LinkToSubscriptionPage = () => {
+export const LinkToSubscriptionPage : React.FC<LastPageProps>  = ({lastPage}) => {
   const navigate = useNavigate();
   const errorContext = useErrorContext();
   return (
     <button
       onClick={() => {
+        addToHistoryPage(lastPage);
         errorContext.setError(null);
         navigate(SUBSCRIPTION_PAGE_ROUTE, { replace: true });
       }}
@@ -30,12 +38,14 @@ export const LinkToSubscriptionPage = () => {
 
 //--------------------------------- Link to Photoes Page ---------------------------------//
 
-export const LinkToPhotosPage = () => {
+export const LinkToPhotosPage : React.FC<LastPageProps>  = ({lastPage}) => {
   const navigate = useNavigate();
   const errorContext = useErrorContext();
+
   return (
     <button
       onClick={() => {
+        addToHistoryPage(lastPage);
         errorContext.setError(null);
         navigate(PHOTOS_ROUTE, { replace: true });
       }}
@@ -82,12 +92,13 @@ export const GoToBasePageAndClearErrorContext = () => {
 
 //--------------------------------- Link to Video From Camera Page ---------------------------------//
 
-export const LinkToVideoFromCameraPage = () => {
+export const LinkToVideoFromCameraPage : React.FC<LastPageProps>  = ({lastPage}) => {
   const navigate = useNavigate();
   const errorContext = useErrorContext();
   return (
     <button
       onClick={() => {
+        addToHistoryPage(lastPage);
         errorContext.setError(null);
         navigate(VIDEO_FROM_CAMERA_ROUTE, { replace: true });
       }}
@@ -150,12 +161,13 @@ export const LinkToErrorPage = () => {
 
 
 
-export const LinkToSubscriptionAdminPage = () => {
+export const LinkToSubscriptionAdminPage : React.FC<LastPageProps>  = ({lastPage}) => {
   const navigate = useNavigate();
   const errorContext = useErrorContext();
   return (
     <button
       onClick={() => {
+        addToHistoryPage(lastPage);
         errorContext.setError(null);
         navigate(SUBSCRIPTION_ADMIN_PAGE_ROUTE, { replace: true });
       }}

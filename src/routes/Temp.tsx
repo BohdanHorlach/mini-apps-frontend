@@ -9,9 +9,13 @@ import {
     LinkToGoogleUserPage,
     LinkToTelegramUserPage
 } from "../components/Links.tsx";
+import { TEMP } from "../static/routes.tsx";
+import { webApp } from "../telegram/webApp.ts";
 
 
 const Temp = () => {
+    webApp?.BackButton.hide();
+
     return <>
         <div>
             Temp page
@@ -19,19 +23,19 @@ const Temp = () => {
         <LinkToLoginPage />
         <br />
         <br />
-        <LinkToPhotosPage />
+        <LinkToPhotosPage lastPage={TEMP} />
         <br />
         <br />
-        <LinkToSubscriptionPage />
+        <LinkToSubscriptionPage lastPage={TEMP} />
         <br />
         <br />
-        <LinkToSubscriptionAdminPage />
+        <LinkToSubscriptionAdminPage lastPage={TEMP} />
         <br />
         <br />
         <GoToBasePageAndClearErrorContext />
         <br />
         <br />
-        <LinkToVideoFromCameraPage />
+        <LinkToVideoFromCameraPage lastPage={TEMP} />
         <br />
         <br />
         <LinkToErrorPage />
