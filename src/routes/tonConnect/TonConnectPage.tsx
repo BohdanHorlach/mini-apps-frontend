@@ -133,7 +133,10 @@ export const TonConnectPage = () => {
 
     return () => {
       webApp?.MainButton.offClick(mainButtonClick);
+      webApp?.MainButton.hide();
+
       webApp?.BackButton.offClick(backButtonClick);
+      webApp?.BackButton.hide();
     }
   }, [webApp]);
 
