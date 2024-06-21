@@ -2,6 +2,7 @@ import { /*Link,*/ useNavigate } from "react-router-dom";
 import { useErrorContext } from "../contexts/useContext";
 import {
   SUBSCRIPTION_PAGE_ROUTE,
+  SUBSCRIPTION_ADMIN_PAGE_ROUTE,
   PHOTOS_ROUTE,
   BASE_ROUTE,
   VIDEO_FROM_CAMERA_ROUTE,
@@ -143,6 +144,23 @@ export const LinkToErrorPage = () => {
       }}
     >
       Go to Error page
+    </button>
+  );
+};
+
+
+
+export const LinkToSubscriptionAdminPage = () => {
+  const navigate = useNavigate();
+  const errorContext = useErrorContext();
+  return (
+    <button
+      onClick={() => {
+        errorContext.setError(null);
+        navigate(SUBSCRIPTION_ADMIN_PAGE_ROUTE, { replace: true });
+      }}
+    >
+      Go to Subscription Admin page
     </button>
   );
 };

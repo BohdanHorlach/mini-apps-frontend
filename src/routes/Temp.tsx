@@ -2,6 +2,7 @@ import {
     LinkToLoginPage,
     LinkToPhotosPage,
     LinkToSubscriptionPage,
+    LinkToSubscriptionAdminPage,
     GoToBasePageAndClearErrorContext,
     LinkToVideoFromCameraPage,
     LinkToErrorPage,
@@ -20,6 +21,8 @@ const Temp = () => {
         <LinkToPhotosPage />
         <br />
         <LinkToSubscriptionPage />
+        <br />
+        <LinkToSubscriptionAdminPage />
         <br />
         <GoToBasePageAndClearErrorContext />
         <br />

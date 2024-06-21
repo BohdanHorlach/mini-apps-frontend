@@ -7,22 +7,22 @@ import {
 } from "@tonconnect/ui-react";
 import { Loading } from "../../components/Components";
 import { Box, Button, Typography } from "@mui/material";
-import { backendAxios } from "../../utils/axiosConfig";
-import {
-  BACKEND_USER_BALANCE_REQUEST,
-  BACKEND_USER_WALLET_CONFIRMATION_REQUEST,
-} from "../../static/url";
+//import { backendAxios } from "../../utils/axiosConfig";
+//import {
+  //BACKEND_USER_BALANCE_REQUEST,
+  //BACKEND_USER_WALLET_CONFIRMATION_REQUEST,
+//} from "../../static/url";
 import { useNavigate } from "react-router-dom";
 import { useErrorContext } from "../../contexts/useContext";
 import { ERROR_ROUTE } from "../../static/routes";
-import { UserBalanceDto } from "../../types/userBalanceResponseType";
+//import { UserBalanceDto } from "../../types/userBalanceResponseType";
 import { LinkToLoginPage } from "../../components/Links";
 
 export const TonConnectPage = () => {
   const [loading, setLoading] = useState(true);
   const [tonConnectUI] = useTonConnectUI();
   const connectedAddress = useTonAddress(true);
-  const [userTonBalance, setUserTonBalance] = useState<string | null>(null);
+  //const [userTonBalance, setUserTonBalance] = useState<string | null>(null);
   // const [userWalletAddress, setUserWalletAddress] = useState<string | null>(
   //   connectedAddress
   // );
@@ -52,21 +52,21 @@ export const TonConnectPage = () => {
   const buySubscription = async () => {
     setLoading(true);
     try {
-      // 1. backend user wallet confirmation
-      const response = await backendAxios.post(
-        BACKEND_USER_WALLET_CONFIRMATION_REQUEST,
-        {
-          wallet: connectedAddress,
-        }
-      );
-      console.log(response);
-      const adminWalletAddress = response.data.walletFriendlyAddress;
+      //// 1. backend user wallet confirmation
+      //const response = await backendAxios.post(
+      //  BACKEND_USER_WALLET_CONFIRMATION_REQUEST,
+      //  {
+      //    wallet: connectedAddress,
+      //  }
+      //);
+      //console.log(response);
+      //const adminWalletAddress = response.data.walletFriendlyAddress;
 
       // 2. buy subscription
       const transaction: SendTransactionRequest = {
         messages: [
           {
-            address: adminWalletAddress,
+            address: "0QAJdLJT1ZepY7AKZM8KF2zsCikiVviPan5lLfbw5GjFR2Uy",
             // TODO: get amount from backend
             amount: "20000000", //Toncoin in nanotons // 20000000 = 0.2 TON
           },
@@ -84,18 +84,18 @@ export const TonConnectPage = () => {
   };
 
   const calculateAndGetUserBalance = async () => {
-    setLoading(true);
-    try {
-      const response = await backendAxios.get(BACKEND_USER_BALANCE_REQUEST);
-
-      const userBalanceDto: UserBalanceDto = response.data;
-      const userBalance = userBalanceDto.tonCoinsBalance;
-      setUserTonBalance(userBalance);
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-      handleError(error as { message: string });
-    }
+    //setLoading(true);
+    //try {
+    //  const response = await backendAxios.get(BACKEND_USER_BALANCE_REQUEST);
+//
+    //  const userBalanceDto: UserBalanceDto = response.data;
+    //  const userBalance = userBalanceDto.tonCoinsBalance;
+    //  setUserTonBalance(userBalance);
+    //  setLoading(false);
+    //} catch (error) {
+    //  setLoading(false);
+    //  handleError(error as { message: string });
+    //}
   };
 
   useEffect(() => {
@@ -124,7 +124,7 @@ export const TonConnectPage = () => {
       >
         Get user balance
       </Button>
-      {userTonBalance && <Typography>{userTonBalance + " TON"}</Typography>}
+      {/*userTonBalance &&*/ <Typography>{/*userTonBalance*/"Number" + " TON"}</Typography>}
       {connectedAddress && (
         <>
           <Typography variant="body1">Wallet: {connectedAddress}</Typography>
