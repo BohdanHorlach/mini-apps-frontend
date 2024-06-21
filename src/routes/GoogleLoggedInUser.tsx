@@ -31,7 +31,7 @@ export function GoogleLoggedInUser() {
   //if (loading) return <Loading />;
 
   return (
-    <div>
+    <div className="page">
       <h2>GoogleLoggedInUser</h2>
       {/*currentUser ? (
         <>

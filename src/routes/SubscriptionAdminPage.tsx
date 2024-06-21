@@ -76,7 +76,7 @@ export const SubscriptionAdminPage = () => {
 
   //if (loading) return <Loading />;
   return (
-    <>
+    <div className="page">
       <h2>Subscription Admin Page</h2>
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
         <TonConnectButton />
@@ -120,6 +120,6 @@ export const SubscriptionAdminPage = () => {
           </Button>
         </>
       )}
-    </>
+    </div>
   );
 };

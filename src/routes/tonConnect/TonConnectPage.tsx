@@ -9,8 +9,8 @@ import { Loading } from "../../components/Components";
 import { Box, Button, Typography } from "@mui/material";
 //import { backendAxios } from "../../utils/axiosConfig";
 //import {
-  //BACKEND_USER_BALANCE_REQUEST,
-  //BACKEND_USER_WALLET_CONFIRMATION_REQUEST,
+//BACKEND_USER_BALANCE_REQUEST,
+//BACKEND_USER_WALLET_CONFIRMATION_REQUEST,
 //} from "../../static/url";
 import { useNavigate } from "react-router-dom";
 import { useErrorContext } from "../../contexts/useContext";
@@ -87,7 +87,7 @@ export const TonConnectPage = () => {
     //setLoading(true);
     //try {
     //  const response = await backendAxios.get(BACKEND_USER_BALANCE_REQUEST);
-//
+    //
     //  const userBalanceDto: UserBalanceDto = response.data;
     //  const userBalance = userBalanceDto.tonCoinsBalance;
     //  setUserTonBalance(userBalance);
@@ -110,33 +110,35 @@ export const TonConnectPage = () => {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <LinkToLoginPage />
-      <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-        <TonConnectButton />
-      </Box>
-      <Button
-        sx={{
-          mt: 2,
-          mb: 2,
-          //backgroundColor: "green",
-        }}
-        onClick={() => calculateAndGetUserBalance()}
-      >
-        Get user balance
-      </Button>
-      {/*userTonBalance &&*/ <Typography>{/*userTonBalance*/"Number" + " TON"}</Typography>}
-      {connectedAddress && (
-        <>
-          <Typography variant="body1">Wallet: {connectedAddress}</Typography>
-          <Button
-            onClick={() => {
-              buySubscription();
-            }}
-          >
-            buy subscription --- Send transaction
-          </Button>
-        </>
-      )}
+      <div className="page">
+        <LinkToLoginPage />
+        <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+          <TonConnectButton />
+        </Box>
+        <Button
+          sx={{
+            mt: 2,
+            mb: 2,
+            //backgroundColor: "green",
+          }}
+          onClick={() => calculateAndGetUserBalance()}
+        >
+          Get user balance
+        </Button>
+        {/*userTonBalance &&*/ <Typography>{/*userTonBalance*/"Number" + " TON"}</Typography>}
+        {connectedAddress && (
+          <>
+            <Typography variant="body1">Wallet: {connectedAddress}</Typography>
+            <Button
+              onClick={() => {
+                buySubscription();
+              }}
+            >
+              buy subscription --- Send transaction
+            </Button>
+          </>
+        )}
+      </div>
     </Box>
   );
 };

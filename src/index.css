@@ -68,6 +68,19 @@ img{
   height: calc(width);
 }
 
+
+p{
+  width: 90%;
+  overflow-x: auto;
+}
+
+
+.page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /*
 @media (prefers-color-scheme: light) {
   :root {

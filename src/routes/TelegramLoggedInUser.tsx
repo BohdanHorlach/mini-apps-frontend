@@ -29,7 +29,7 @@ export function TelegramLoggedInUser() {
   //  handleError({ message: `${JSON.stringify(userInfo)}` });
  // } else {
     return (
-      <>
+      <div className="page">
         <h2>User Page</h2>
         <p>User authenticated</p>
         <hr />
@@ -62,7 +62,7 @@ export function TelegramLoggedInUser() {
           User Allows Write To PM: {/*userInfo.allows_write_to_pm ? "Yes" : "No"*/}
         </p>
         <LogOutFromTelegramButton />
-      </>
+      </div>
     );
   }
 //}

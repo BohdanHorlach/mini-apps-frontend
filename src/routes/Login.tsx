@@ -82,7 +82,7 @@ export const Login = () => {
   }
 
   return (
-    <>
+    <div className="page">
       <p>{googleAuthContext.errorMessage}</p>
       <h2>This is main page</h2>
       <div className="column">
@@ -97,6 +97,6 @@ export const Login = () => {
         <LinkToVideoFromCameraPage />
         <LinkToPhotosPage />
       </div>
-    </>
+    </div>
   );
 };
