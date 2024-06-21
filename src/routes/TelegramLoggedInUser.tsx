@@ -35,8 +35,6 @@ export function TelegramLoggedInUser() {
         <hr />
         <div className="column">
           <LinkToSubscriptionPage />
-          <LinkToVideoFromCameraPage />
-          <LinkToPhotosPage />
         </div>
         <hr />
         <h2>Telegram User Info:</h2>
@@ -62,6 +60,8 @@ export function TelegramLoggedInUser() {
           User Allows Write To PM: {/*userInfo.allows_write_to_pm ? "Yes" : "No"*/}
         </p>
         <div style={{width: "68vw"}}>
+          <LinkToVideoFromCameraPage />
+          <LinkToPhotosPage />
           <LogOutFromTelegramButton />
         </div>
       </div>

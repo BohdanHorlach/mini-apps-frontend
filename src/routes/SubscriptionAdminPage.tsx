@@ -1,5 +1,8 @@
-import { Button } from "@mui/material";
+//import { Button } from "@mui/material";
 import { TonConnectButton, useTonAddress } from "@tonconnect/ui-react";
+import { useEffect } from "react";
+import { webApp } from "../telegram/webApp";
+import { getLastPage } from "../utils/localStorageUtils";
 //import { /*useCallback,*/ useEffect, useState } from "react";
 //import {
 //  BACKEND_GET_ADMIN_CONFIG_REQUEST,
@@ -10,7 +13,7 @@ import { TonConnectButton, useTonAddress } from "@tonconnect/ui-react";
 //import { AdminConfigResponseDto } from "../types/adminConfigTypes";
 //import { ERROR_ROUTE } from "../static/routes";
 //import { useErrorContext } from "../contexts/useContext";
-//import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 //---------------------------------------------------------------------------------//
 
@@ -27,7 +30,7 @@ export const SubscriptionAdminPage = () => {
 
   // error handling
   //const errorContext = useErrorContext();
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
 
   //const handleError = useCallback(
   //  (error: { message: string }) => {
@@ -69,10 +72,49 @@ export const SubscriptionAdminPage = () => {
 
   // backend request to set new admin wallet
   //const doSetNewAdminWallet = async () => {
-  //  return backendAxios.post(BACKEND_SET_ADMIN_CONFIG_REQUEST, {
-  //    wallet: address, //wallet?.account.address,
-  //  });
+  //  //return backendAxios.post(BACKEND_SET_ADMIN_CONFIG_REQUEST, {
+  //  //  wallet: address, //wallet?.account.address,
+  //  //});
   //};
+
+
+  //Mini apps buttons setting
+  useEffect(() => {
+    function mainButtonClick() {
+      try {
+        //const adminConfig = (await doSetNewAdminWallet()).data;
+        //setAdminConfig(adminConfig);
+      } catch (error) {
+        //handleError(error as { message: string });
+      }
+    }
+
+    function backButtonClick() {
+      const page = getLastPage();
+      navigate(page === null ? "" : page, {replace: true});
+    }
+
+    if (webApp !== null) {
+      const MainButton = webApp.MainButton;
+      const BackButton = webApp.BackButton;
+
+      MainButton.show();
+      MainButton.setText("Buy subscription --- Send transaction");
+      MainButton.onClick(mainButtonClick);
+
+      BackButton.show();
+      BackButton.onClick(backButtonClick);
+    }
+
+    //unscribe of onClick event
+    return () => {
+      if (webApp !== null) {
+        webApp.MainButton.offClick(mainButtonClick);
+        webApp.BackButton.offClick(backButtonClick);
+      }
+    }
+  }, [webApp]);
+
 
   //if (loading) return <Loading />;
   return (
@@ -106,7 +148,9 @@ export const SubscriptionAdminPage = () => {
           <p>
             Connected wallet: {address} {/*{wallet.account.address} */}
           </p>
-          <Button
+          {
+            /*
+              <Button
             variant="outlined"
             onClick={async () => {
               try {
@@ -132,6 +176,8 @@ export const SubscriptionAdminPage = () => {
           >
             Set admin wallet
           </Button>
+            */
+          }
         </>
       )}
     </div>

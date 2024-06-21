@@ -17,6 +17,9 @@ import { useErrorContext } from "../../contexts/useContext";
 import { ERROR_ROUTE } from "../../static/routes";
 //import { UserBalanceDto } from "../../types/userBalanceResponseType";
 import { LinkToLoginPage } from "../../components/Links";
+import { webApp } from "../../telegram/webApp";
+import { getLastPage } from "../../utils/localStorageUtils";
+
 
 export const TonConnectPage = () => {
   const [loading, setLoading] = useState(true);
@@ -104,6 +107,38 @@ export const TonConnectPage = () => {
     //------------------------------------------------//
   }, []);
 
+
+  useEffect(() => {
+    function mainButtonClick() {
+      buySubscription();
+    }
+
+    function backButtonClick() {
+      const page = getLastPage();
+      navigate(page === null ? "" : page, {replace: true});
+    }
+
+    if (webApp !== null) {
+      const MainButton = webApp.MainButton;
+      const BackButton = webApp.BackButton;
+
+      MainButton.show();
+      MainButton.setText("Buy subscription --- Send transaction");
+      MainButton.onClick(mainButtonClick);
+
+      BackButton.show();
+      BackButton.onClick(backButtonClick);
+    }
+
+    return () => {
+      if (webApp !== null) {
+        webApp.MainButton.offClick(mainButtonClick);
+        webApp.BackButton.offClick(backButtonClick);
+      }
+    }
+  }, [webApp]);
+
+
   if (loading) {
     return <Loading />;
   }
@@ -111,7 +146,7 @@ export const TonConnectPage = () => {
   return (
     <div className="page">
       <LinkToLoginPage />
-      <br/>
+      <br />
       <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
         <TonConnectButton />
       </Box>
