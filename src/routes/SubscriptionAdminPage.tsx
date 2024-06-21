@@ -103,10 +103,11 @@ export const SubscriptionAdminPage = () => {
 
       {address && (
         <>
-          <div>
+          <p>
             Connected wallet: {address} {/*{wallet.account.address} */}
-          </div>
+          </p>
           <Button
+            variant="outlined"
             onClick={async () => {
               try {
                 //const adminConfig = (await doSetNewAdminWallet()).data;

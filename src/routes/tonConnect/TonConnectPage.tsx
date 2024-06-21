@@ -116,6 +116,7 @@ export const TonConnectPage = () => {
         <TonConnectButton />
       </Box>
       <Button
+        variant="outlined"
         sx={{
           mt: 2,
           mb: 2,
@@ -138,6 +139,7 @@ export const TonConnectPage = () => {
         <>
           <Typography variant="body1">Wallet: {connectedAddress}</Typography>
           <Button
+            variant="outlined"
             onClick={() => {
               buySubscription();
             }}

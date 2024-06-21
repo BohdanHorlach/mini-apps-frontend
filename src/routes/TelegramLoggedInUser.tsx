@@ -61,7 +61,7 @@ export function TelegramLoggedInUser() {
         <p>
           User Allows Write To PM: {/*userInfo.allows_write_to_pm ? "Yes" : "No"*/}
         </p>
-        <div style={{width: "60vw"}}>
+        <div style={{width: "68vw"}}>
           <LogOutFromTelegramButton />
         </div>
       </div>
