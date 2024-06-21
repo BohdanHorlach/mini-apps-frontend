@@ -109,9 +109,8 @@ export const TonConnectPage = () => {
   }
 
   return (
-    <Box sx={{ width: "100%" }}>
-      <div className="page">
-        <LinkToLoginPage />
+    <div className="page">
+      <LinkToLoginPage />
         <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
           <TonConnectButton />
         </Box>
@@ -138,7 +137,6 @@ export const TonConnectPage = () => {
             </Button>
           </>
         )}
-      </div>
-    </Box>
+    </div>
   );
 };
