@@ -1,6 +1,5 @@
 {
   "name": "My Telegram Mini App",
-  "description": "This is my Telegram Mini App with subscription functionality.",
-  "url": "http://localhost:5173",
-  "iconUrl": "http://localhost:5173/icon.png"
+  "url": "http://telegram-mini-apps-ts.netlify.app",
+  "iconUrl": "http://telegram-mini-apps-ts.netlify.app/icon.png"
 }
