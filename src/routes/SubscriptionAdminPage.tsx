@@ -115,6 +115,19 @@ export const SubscriptionAdminPage = () => {
                 //handleError(error as { message: string });
               }
             }}
+            sx={{
+              mt: 2,
+              mb: 2,
+              backgroundColor: "var(--tg-theme-section-bg-color)",
+              color: "var(--tg-theme-button-text-color)",
+              borderColor: "var(--tg-theme-button-color)",
+              p: 2, // Add padding for spacing
+              '&:hover': {
+                backgroundColor: "var(--tg-theme-secondary-bg-color)",
+                borderColor: "var(--tg-theme-link-color)",
+                opacity: "0.7"
+              },
+            }}
           >
             Set admin wallet
           </Button>

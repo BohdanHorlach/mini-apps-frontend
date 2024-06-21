@@ -119,7 +119,15 @@ export const TonConnectPage = () => {
         sx={{
           mt: 2,
           mb: 2,
-          //backgroundColor: "green",
+          backgroundColor: "var(--tg-theme-section-bg-color)",
+          color: "var(--tg-theme-button-text-color)",
+          borderColor: "var(--tg-theme-button-color)",
+          p: 2, // Add padding for spacing
+          '&:hover': {
+            backgroundColor: "var(--tg-theme-secondary-bg-color)",
+            borderColor: "var(--tg-theme-link-color)",
+            opacity: "0.7"
+          },
         }}
         onClick={() => calculateAndGetUserBalance()}
       >
@@ -132,6 +140,19 @@ export const TonConnectPage = () => {
           <Button
             onClick={() => {
               buySubscription();
+            }}
+            sx={{
+              mt: 2,
+              mb: 2,
+              backgroundColor: "var(--tg-theme-section-bg-color)",
+              color: "var(--tg-theme-button-text-color)",
+              borderColor: "var(--tg-theme-button-color)",
+              p: 2, // Add padding for spacing
+              '&:hover': {
+                backgroundColor: "var(--tg-theme-secondary-bg-color)",
+                borderColor: "var(--tg-theme-link-color)",
+                opacity: "0.7"
+              },
             }}
           >
             buy subscription --- Send transaction
