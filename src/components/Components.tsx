@@ -37,10 +37,10 @@ export const AuthButton = ({
       }
       sx={{
         mt: 2,
-        backgroundColor: "var(--tg-theme-button-color)",
+        backgroundColor: "var(--tg-theme-section-bg-color)",
         color: "var(--tg-theme-button-text-color)",
         width: "100%",
-        borderColor: "var(--tg-theme-accent-text-color)",
+        borderColor: "var(--tg-theme-button-color)",
         //
         display: "flex",
         alignItems: "center",
@@ -48,8 +48,8 @@ export const AuthButton = ({
         textAlign: "left", // Align text to the left
         p: 2, // Add padding for spacing
         '&:hover': {
-          backgroundColor: "var(--tg-theme-button-hover-color)",
-          borderColor: "var(--tg-theme-button-hover-border-color)",
+          backgroundColor: "var(--tg-theme-secondary-bg-color)",
+          borderColor: "var(--tg-theme-link-color)",
           opacity: "0.7"
         },
       }}

@@ -62,9 +62,9 @@ export function GoogleLoggedInUser() {
           <img src={/*currentUser.photoURL ?? ""*/ "https://www.pngfind.com/pngs/m/610-6104451_image-placeholder-png-user-profile-placeholder-image-png.png"} alt="user photo" />
           <hr />
           <div className="column">
-            <LogOutFromGoogleButton />
             <LinkToVideoFromCameraPage />
             <LinkToPhotosPage />
+            <LogOutFromGoogleButton />
           </div>
         </>
     </div>

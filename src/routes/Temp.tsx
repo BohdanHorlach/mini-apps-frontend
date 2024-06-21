@@ -18,19 +18,27 @@ const Temp = () => {
         </div>
         <LinkToLoginPage />
         <br />
+        <br />
         <LinkToPhotosPage />
+        <br />
         <br />
         <LinkToSubscriptionPage />
         <br />
+        <br />
         <LinkToSubscriptionAdminPage />
+        <br />
         <br />
         <GoToBasePageAndClearErrorContext />
         <br />
+        <br />
         <LinkToVideoFromCameraPage />
+        <br />
         <br />
         <LinkToErrorPage />
         <br />
+        <br />
         <LinkToGoogleUserPage />
+        <br />
         <br />
         <LinkToTelegramUserPage />
     </>
