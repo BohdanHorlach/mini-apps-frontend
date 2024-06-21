@@ -37,15 +37,15 @@ export const AuthButton = ({
       }
       sx={{
         mt: 2,
-        backgroundColor: "grey.100",
-        color: "text.primary",
+        //backgroundColor: "grey.100",
+        //color: "text.primary",
         width: "100%",
         //
         display: "flex",
         alignItems: "center",
         justifyContent: "flex-start", // Align content to the left
         textAlign: "left", // Align text to the left
-        p: 1, // Add padding for spacing
+        //p: 1, // Add padding for spacing
       }}
     >
       {buttonText}
