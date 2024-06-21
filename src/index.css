@@ -64,7 +64,7 @@ button:focus-visible {
 
 
 img{
-  width: 85%;
+  width: 75%;
   height: calc(width);
 }
 
@@ -72,6 +72,12 @@ img{
 p{
   width: 90%;
   overflow-x: auto;
+}
+
+
+hr{
+  background-color: var(--tg-theme-text-color);
+  width: 85%;
 }
 
 

@@ -111,32 +111,33 @@ export const TonConnectPage = () => {
   return (
     <div className="page">
       <LinkToLoginPage />
-        <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-          <TonConnectButton />
-        </Box>
-        <Button
-          sx={{
-            mt: 2,
-            mb: 2,
-            //backgroundColor: "green",
-          }}
-          onClick={() => calculateAndGetUserBalance()}
-        >
-          Get user balance
-        </Button>
-        {/*userTonBalance &&*/ <Typography>{/*userTonBalance*/"Number" + " TON"}</Typography>}
-        {connectedAddress && (
-          <>
-            <Typography variant="body1">Wallet: {connectedAddress}</Typography>
-            <Button
-              onClick={() => {
-                buySubscription();
-              }}
-            >
-              buy subscription --- Send transaction
-            </Button>
-          </>
-        )}
+      <br/>
+      <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+        <TonConnectButton />
+      </Box>
+      <Button
+        sx={{
+          mt: 2,
+          mb: 2,
+          //backgroundColor: "green",
+        }}
+        onClick={() => calculateAndGetUserBalance()}
+      >
+        Get user balance
+      </Button>
+      {/*userTonBalance &&*/ <Typography>{/*userTonBalance*/"Number" + " TON"}</Typography>}
+      {connectedAddress && (
+        <>
+          <Typography variant="body1">Wallet: {connectedAddress}</Typography>
+          <Button
+            onClick={() => {
+              buySubscription();
+            }}
+          >
+            buy subscription --- Send transaction
+          </Button>
+        </>
+      )}
     </div>
   );
 };
