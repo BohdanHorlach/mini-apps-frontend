@@ -37,15 +37,21 @@ export const AuthButton = ({
       }
       sx={{
         mt: 2,
-        //backgroundColor: "grey.100",
-        //color: "text.primary",
+        backgroundColor: "var(--tg-theme-button-color)",
+        color: "var(--tg-theme-button-text-color)",
         width: "100%",
+        borderColor: "var(--tg-theme-accent-text-color)",
         //
         display: "flex",
         alignItems: "center",
         justifyContent: "flex-start", // Align content to the left
         textAlign: "left", // Align text to the left
-        //p: 1, // Add padding for spacing
+        p: 2, // Add padding for spacing
+        '&:hover': {
+          backgroundColor: "var(--tg-theme-button-hover-color)",
+          borderColor: "var(--tg-theme-button-hover-border-color)",
+          opacity: "0.7"
+        },
       }}
     >
       {buttonText}
