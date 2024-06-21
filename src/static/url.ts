@@ -2,7 +2,7 @@
 export const BASE_URL = "http://localhost:5173";
 
 // frontend https url
-export const BASE_HTTPS_URL = "https://adapted-worm-one.ngrok-free.app";
+export const BASE_HTTPS_URL = "https://telegram-mini-apps-ts.netlify.app";
 
 // backend
 
