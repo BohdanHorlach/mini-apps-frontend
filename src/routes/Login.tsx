@@ -11,7 +11,7 @@ import {
   ERROR_ROUTE,
   GOOGLE_USER_ROUTE,
   TELEGRAM_USER_ROUTE,
-  BASE_ROUTE
+  BASE_ROUTE,
 } from "../static/routes";
 import { auth } from "../firebase/firebaseConfig";
 import {
@@ -19,11 +19,12 @@ import {
   isGoogleAuthAction,
   isTelegramTokenExpired,
 } from "../utils/localStorageUtils";
-import { useEffect, /*useRef,*/ useState } from "react";
+import { useEffect, useState } from "react";
 import { useErrorContext, useGoogleAuthContext } from "../contexts/useContext";
 import {
   LinkToVideoFromCameraPage,
   LinkToPhotosPage,
+  LinkToSubscriberProtectedPage,
 } from "../components/Links";
 
 export const Login = () => {
@@ -55,11 +56,10 @@ export const Login = () => {
 
   useEffect(() => {
     if (googleAuthContext.errorMessage !== null) {
-      googleAuthContext.clearErrorMessage();
-
       googleAuthContext.doLogOutFromGoogle().then(() => {
         errorContext.setError(googleAuthContext.errorMessage);
         console.log(errorContext.errorMessage);
+        googleAuthContext.clearErrorMessage();
       });
     }
   }, [errorContext, googleAuthContext]);
@@ -95,8 +95,9 @@ export const Login = () => {
         <LogInWithGoogleButton />
         <LogOutFromGoogleButton />
         <hr />
-        <LinkToVideoFromCameraPage lastPage={BASE_ROUTE}/>
+        <LinkToVideoFromCameraPage lastPage={BASE_ROUTE} />
         <LinkToPhotosPage lastPage={BASE_ROUTE} />
+        <LinkToSubscriberProtectedPage lastPage={BASE_ROUTE} />
       </div>
     </div>
   );

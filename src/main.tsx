@@ -11,18 +11,19 @@ import {
   ERROR_ROUTE,
   GOOGLE_USER_ROUTE,
   PHOTOS_ROUTE,
+  SUBSCRIBER_PROTECTED_ROUTE,
   SUBSCRIPTION_ADMIN_PAGE_ROUTE,
   SUBSCRIPTION_PAGE_ROUTE,
   TELEGRAM_USER_ROUTE,
   TEST_HOME_ROUTE,
   VIDEO_FROM_CAMERA_ROUTE,
-  TEMP
+  TEMP,
 } from "./static/routes.tsx";
 
 import { Login } from "./routes/Login.tsx";
 
 import { ErrorPageWithMessage } from "./components/error/ErrorPageWithMessage.tsx";
-import { VideoFromCamera } from "./routes/VideoFromCamera.tsx";
+//import { VideoFromCamera } from "./routes/VideoFromCamera.tsx";
 import { Photos } from "./routes/Photos.tsx";
 import { AuthPage } from "./routes/AuthPage.tsx";
 import { TonConnectPage } from "./routes/tonConnect/TonConnectPage.tsx";
@@ -32,6 +33,8 @@ import Temp from "./routes/Temp.tsx";
 //  AdminProtection,
 //  LoginProtection,
 //} from "./components/ProtectionComponents.tsx";
+import { SubscriberProtectedPage } from "./routes/SubscriberProtectedPage.tsx";
+import Camera from "./components/Camera/Camera.tsx";
 
 // Create router
 const router = createBrowserRouter([
@@ -64,7 +67,8 @@ const router = createBrowserRouter([
         path: VIDEO_FROM_CAMERA_ROUTE,
         element: (
           //<LoginProtection>
-            <VideoFromCamera />
+            <Camera />
+           // {/* <VideoFromCamera /> */}
           //</LoginProtection>
         ),
       },
@@ -88,11 +92,15 @@ const router = createBrowserRouter([
         path: SUBSCRIPTION_ADMIN_PAGE_ROUTE,
         element: (
           //<LoginProtection>
-            //<AdminProtection>
+          //  <AdminProtection>
               <SubscriptionAdminPage />
-            //</AdminProtection>
+          //  </AdminProtection>
           //</LoginProtection>
         ),
+      },
+      {
+        path: SUBSCRIBER_PROTECTED_ROUTE,
+        element: <SubscriberProtectedPage />,
       },
       {
         path: "*",
