@@ -24,7 +24,7 @@ import { useErrorContext, useGoogleAuthContext } from "../contexts/useContext";
 import {
   LinkToVideoFromCameraPage,
   LinkToPhotosPage,
-  LinkToSubscriberProtectedPage,
+  //LinkToSubscriberProtectedPage,
 } from "../components/Links";
 
 export const Login = () => {
@@ -97,7 +97,7 @@ export const Login = () => {
         <hr />
         <LinkToVideoFromCameraPage lastPage={BASE_ROUTE} />
         <LinkToPhotosPage lastPage={BASE_ROUTE} />
-        <LinkToSubscriberProtectedPage lastPage={BASE_ROUTE} />
+        {/*<LinkToSubscriberProtectedPage lastPage={BASE_ROUTE} />*/}
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ import {
 } from "../../static/url";
 import { useNavigate } from "react-router-dom";
 import { useErrorContext } from "../../contexts/useContext";
-import { BASE_ROUTE, ERROR_ROUTE } from "../../static/routes";
+import { /*BASE_ROUTE,*/ ERROR_ROUTE } from "../../static/routes";
 import { UserBalanceDto } from "../../types/userBalanceResponseType";
 import {
   LinkToLoginPage,
@@ -37,7 +37,7 @@ import {
   SubscriptionResponseDto,
   SubscriptionStatus,
 } from "../../types/subscriptionStatusType";
-import moment from "moment-timezone";
+//import moment from "moment-timezone";
 import { UserWalletConfirmationResponseDto } from "../../types/userWalletConfirmationType";
 import { AdminConfigResponseDto } from "../../types/adminConfigTypes";
 
@@ -325,9 +325,9 @@ export const TonConnectPage = () => {
               {subscriptionStatus.endDate && (
                 <p>
                   End date:{" "}
-                  {moment(subscriptionStatus.endDate)
+                  {/*moment(subscriptionStatus.endDate)
                     .tz("Europe/Kiev")
-                    .format("YYYY-MM-DD HH:mm:ss")}
+              .format("YYYY-MM-DD HH:mm:ss")*/}
                 </p>
               )}
             </>

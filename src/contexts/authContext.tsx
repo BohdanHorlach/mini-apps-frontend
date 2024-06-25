@@ -21,7 +21,7 @@ import {
   getGoogleAuthAction,
   getGoogleAuthToken,
   isGoogleAuthToken,
-  isTelegramTokenExpired,
+  //isTelegramTokenExpired,
   setGoogleAuthAction,
   setGoogleAuthToken,
   setTelegramAuthToken,

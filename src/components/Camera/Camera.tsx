@@ -7,8 +7,8 @@ import React, {
   RefObject,
 } from "react";
 import { useNavigate } from "react-router-dom";
-import { backendAxios } from "../../utils/axiosConfig";
-import { BACKEND_UPLOAD_IMAGE_REQUEST } from "../../static/url";
+//import { backendAxios } from "../../utils/axiosConfig";
+//import { BACKEND_UPLOAD_IMAGE_REQUEST } from "../../static/url";
 import { useErrorContext } from "../../contexts/useContext";
 import { ERROR_ROUTE } from "../../static/routes";
 import { backButton, mainButton, webApp } from "../../telegram/webApp";
@@ -46,15 +46,15 @@ export const Camera: React.FC = () => {
         const formData = new FormData();
         formData.append("photo", photoBlob, "photo.jpg");
 
-        const response = await backendAxios.post(
-          BACKEND_UPLOAD_IMAGE_REQUEST,
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        );
+        //const response = await backendAxios.post(
+        //  BACKEND_UPLOAD_IMAGE_REQUEST,
+        //  formData,
+        //  {
+        //    headers: {
+        //      "Content-Type": "multipart/form-data",
+        //    },
+        //  }
+        //);
         // const response = await fetch("http://localhost:3000/upload-image", {
         //   method: "POST",
         //   body: formData,
