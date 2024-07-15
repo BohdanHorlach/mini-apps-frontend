@@ -1,17 +1,22 @@
 import './App.css';
 import MyCard from './components/MyCard';
 import ListCard from './components/ListCard'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Box, Tab } from '@mui/material';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 
 
 function App() {
   const [value, setValue] = useState(0);
+  const tg = window.Telegram.WebApp;
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  useEffect(() => {
+    tg.requestContact();
+  }, [tg])
 
   return (
     <div className='centered'>
