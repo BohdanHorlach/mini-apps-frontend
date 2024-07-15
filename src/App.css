@@ -1,16 +1,44 @@
-#root {
-  max-width: 100vw;
-  margin: 0 auto;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  text-align: center;
+:root{
+    --card-max-width: 100%;
+    --card-min-width: 60vw;
+    --card-min-height: 30vw;
 }
 
-/*---------------------------------------------------------------------------------*/
 
-.column {
-  display: grid;
-  grid-template-columns: 1fr; /* Adjust as needed */
-  gap: 30px; /* Specify the gap between items */
-  justify-items: center;
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.base-wrapper{
+    display: flex;
+    height: auto;
+    width: 95vw;
+    flex-direction: column;
+}
+
+
+
+
+
+/*
+-------------------------------------
+                CARD
+-------------------------------------
+*/
+
+
+
+.card-list {
+    max-width: 100vw;
+    overflow: auto;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+
+.list-wrapper {
+    width: fit-content;
 }
