@@ -23,7 +23,7 @@ import {
 import { Login } from "./routes/Login.tsx";
 
 import { ErrorPageWithMessage } from "./components/error/ErrorPageWithMessage.tsx";
-import { VideoFromCamera } from "./routes/VideoFromCamera.tsx";
+//import { VideoFromCamera } from "./routes/VideoFromCamera.tsx";
 import { Photos } from "./routes/Photos.tsx";
 import { AuthPage } from "./routes/AuthPage.tsx";
 import { TonConnectPage } from "./routes/tonConnect/TonConnectPage.tsx";

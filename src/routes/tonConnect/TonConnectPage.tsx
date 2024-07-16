@@ -18,7 +18,7 @@ import {
 } from "../../static/url";
 import { useNavigate } from "react-router-dom";
 import { useErrorContext } from "../../contexts/useContext";
-import { BASE_ROUTE, ERROR_ROUTE } from "../../static/routes";
+import { /*BASE_ROUTE,*/ ERROR_ROUTE } from "../../static/routes";
 import { UserBalanceDto } from "../../types/userBalanceResponseType";
 import {
   LinkToLoginPage,

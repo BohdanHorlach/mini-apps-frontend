@@ -46,7 +46,7 @@ export const Camera: React.FC = () => {
         const formData = new FormData();
         formData.append("photo", photoBlob, "photo.jpg");
 
-        const response = await backendAxios.post(
+        await backendAxios.post(
           BACKEND_UPLOAD_IMAGE_REQUEST,
           formData,
           {

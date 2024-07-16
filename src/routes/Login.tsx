@@ -97,7 +97,7 @@ export const Login = () => {
         <hr />
         <LinkToVideoFromCameraPage lastPage={BASE_ROUTE} />
         <LinkToPhotosPage lastPage={BASE_ROUTE} />
-        <LinkToSubscriberProtectedPage lastPage={BASE_ROUTE} />
+        <LinkToSubscriberProtectedPage /*lastPage={BASE_ROUTE}*/ />
       </div>
     </div>
   );
